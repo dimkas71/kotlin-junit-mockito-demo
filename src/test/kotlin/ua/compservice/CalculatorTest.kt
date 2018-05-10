@@ -2,6 +2,10 @@ package ua.compservice
 
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.function.Executable
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.CsvSource
+import org.junit.jupiter.params.provider.MethodSource
 
 @DisplayName("Calculator test")
 class CalculatorTest {
@@ -71,4 +75,26 @@ class CalculatorTest {
                     Assertions.assertEquals(expected, Calculator.squareRoot(input))
                 })
             }
+
+
+    @ParameterizedTest
+    @MethodSource("squares")
+    fun `test squares`(input: Int, expected: Int) {
+        Assertions.assertEquals(expected, Calculator.square(input))
+    }
+
+    @ParameterizedTest
+    @CsvSource("1;1", "2;4", "3;9", delimiter = ';')
+    fun `test squares with csv source example`(input: Int, expected: Int) {
+        Assertions.assertEquals(expected, input * input)
+    }
+
+
+    companion object {
+        @JvmStatic
+        fun squares() = listOf(
+                Arguments.of(1, 1),
+                Arguments.of(2, 4)
+        )
+    }
 }

@@ -1,5 +1,7 @@
 package ua.compservice;
 
+import static ua.compservice.Filter.*;
+
 public class Prettl {
 
     private final String name;
@@ -42,5 +44,12 @@ public class Prettl {
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    public static void main(String... args) {
+        Utils.log("Hello from Kotlin");
+        Demo demo = new Demo("simple name");
+        System.out.println(demo);
+
     }
 }

@@ -1,6 +1,5 @@
 package ua.compservice;
 
-import static ua.compservice.Filter.*;
 
 public class Prettl {
 

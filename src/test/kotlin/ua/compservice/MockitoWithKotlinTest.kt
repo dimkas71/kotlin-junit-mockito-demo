@@ -6,7 +6,7 @@ import org.mockito.Mockito
 
 
 @DisplayName("Examples for using mockito  with kotlin")
-@Tag("Nullable")
+@Tag("Active")
 class MockitoWithKotlinTest {
 
     lateinit var bookService: BookService

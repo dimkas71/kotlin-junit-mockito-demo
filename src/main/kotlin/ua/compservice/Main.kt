@@ -29,5 +29,18 @@ object Main {
 
         println(newLayout)
 
+        val source = "The quick brown fox"
+        val expected = "Hetay uickqay rownbay oxfay"
+
+        val target = source.split(" ")
+                .map { EnglishToPig.encode(it) }
+                .joinToString(separator = " ")
+
+        assert(expected.toLowerCase() == target.toLowerCase(), {"$expected == $target. Should be equal"})
+
+
+
+
+
     }
 }

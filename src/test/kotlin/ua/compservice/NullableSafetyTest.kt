@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
 
 @DisplayName("A bunch of tests for better understanding nullable in kotlin")
-@Tag("Nullable")
+@Tag("Active")
 class NullableSafetyTest {
 
     @Test
